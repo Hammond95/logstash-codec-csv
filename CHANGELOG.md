@@ -1,3 +1,6 @@
+## 1.1.1
+- Feat: Allowed a special character as separator.
+
 ## 1.1.0
   - Feat: added target => namespace support + ECS compatibility [#7](https://github.com/logstash-plugins/logstash-codec-csv/pull/7)
 
