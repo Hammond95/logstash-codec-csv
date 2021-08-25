@@ -21,6 +21,10 @@ Need help? Try #logstash on freenode IRC or the logstash-users@googlegroups.com 
 
 ### 1. Plugin Developement and Testing
 
+#### My Notes
+
+* `jruby -S gem build logstash-codec-csv.gemspec`
+
 #### Code
 - To get started, you'll need JRuby with the Bundler gem installed.
 

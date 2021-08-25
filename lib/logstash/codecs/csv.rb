@@ -127,10 +127,13 @@ class LogStash::Codecs::CSV < LogStash::Codecs::Base
     # @convert_symbols contains the symbolized types to avoid symbol conversion in the transform method
     @convert_symbols = @convert.each_with_object({}) { |(k, v), result| result[k] = v.to_sym }
 
+    # if this special character non-printable is entered, then use it
+    @separator = "\x1f" if @separator == "\\x1f"
+    
     # if the zero byte character is entered in the config, set the value
     @quote_char = "\x00" if @quote_char == "\\x00"
 
-    @logger.debug? && @logger.debug("CSV parsing options", :col_sep => @separator, :quote_char => @quote_char)
+    @logger.info? && @logger.info("CSV parsing options", :col_sep => @separator, :quote_char => @quote_char)
   end
 
   def decode(data)
